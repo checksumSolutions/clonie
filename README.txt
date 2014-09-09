@@ -31,7 +31,7 @@ Dirty clone is based off of dd, and will work perfectly for known good drives. H
 
 Clean clone is based off of ddrescure, and will work around bad sectors. Clonie will then create a logfile (named cloneLog.txt by default) which contains the locations of bad sectors which will need to have manual recovery performed.
 
-You may also specify a value for block sizes, (BS-Value), when prompted. Do some research before diving in,as for most drives you will not need to change this. Through testing we have found that 512 produces good accuracy and speed and has therefore been chosen as the default.
+You may also specify a value for block sizes, (BS-Value), when prompted. Do some research before diving in, as for most drives you will not need to change this. Through testing we have found that 512 produces good accuracy and speed and has therefore been chosen as the default.
 
 THANK YOU FOR USING CLONIE
 --checksumSolutions
