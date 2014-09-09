@@ -16,7 +16,7 @@ sudo make install
 
 USING CLONIE
 ------------
-Clonie is a very powerful tool when used properly. Clonie has the power to wipe drives. Please be careful when using clonie. It isn't our fault if you loose your data.
+Clonie is a very powerful tool when used properly. Clonie has the power to wipe drives. Please be careful when using clonie. It isn't our fault if you lose your data.
 
 Clonie can copy data from both good drives and bad drives.
 
