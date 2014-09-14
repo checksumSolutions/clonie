@@ -98,7 +98,7 @@ int cleanClone(){
 	printf("\n\n");
 	clearBuf();
 	
-	snprintf(command, sizeof(command), "diskutil list | grep -Ev '%s'", sdrive);
+	snprintf(command, sizeof(command), "lsblk | grep -Ev '%s'", sdrive);
 	system(command);
 	printf("choose target drive: ");
 	scanf("%s", tdrive);
