@@ -4,7 +4,6 @@ CC=gcc
 CLFAGS=
 LDFLAGS=
 SOURCES=src/*
-OSXSOURCES=osx/*
 EXECUTABLE=bin/clonie
 EXECUTABLEDIR=bin/*	
 BIN=/usr/local/bin/clonie
@@ -19,13 +18,6 @@ clonie:
 	@$(CC) $(SOURCES) -o $(EXECUTABLE)
 	@echo Clonie has been made. Before executing, make sure to read the README for important information, including dependencies.
 
-osx:
-	@echo Removing old files...
-	@rm -rf bin
-	@echo Making clonie...
-	@mkdir bin
-	@$(CC) $(OSXSOURCES) -o $(EXECUTABLE)
-	@echo Clonie has been made. Before executing, make sure to read the README for important information, including dependencies.
 install: install-clonie
 
 install-clonie:

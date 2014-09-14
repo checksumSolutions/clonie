@@ -1,28 +1,17 @@
-clonie v. 1.1
-
-CHANGES
--------
-1.0 -- first release
-1.1 -- added support for OSX
+clonie v. 1.0
 
 DEPENDENCIES
 ------------
-*lsblk (this is not needed on OSX, diskutil list is used instead)
+*lsblk
 *ddrescue
 *dd
 *pv
-*** If you are using OSX, please make sure you have command line tools installed
 
 Without these programs, clonie will not function properly.
 
 INSTALLING CLONIE
 -----------------
 make
-sudo make install
-
-INSTALLING CLONIE ON OSX
-------------------------
-make osx
 sudo make install
 
 USING CLONIE
