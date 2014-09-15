@@ -19,7 +19,9 @@ clonie:
 	@$(CC) $(SOURCES) -o $(EXECUTABLE)
 	@echo Clonie has been made. Before executing, make sure to read the README for important information, including dependencies.
 
-osx:
+osx: osx-build
+
+osx-build:
 	@echo Removing old files...
 	@rm -rf bin
 	@echo Making clonie...
