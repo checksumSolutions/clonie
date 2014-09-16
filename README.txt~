@@ -1,10 +1,9 @@
-clonie v. 1.1.1
+clonie v. 1.1
 
 CHANGES
 -------
 1.0 -- first release
 1.1 -- added support for OSX
-1.1.1 -- there is now a dependencies folder. If you wish, compile the programs with gcc (or whatever c compiler you want) and execute them to install needed dependencies.
 
 DEPENDENCIES
 ------------
