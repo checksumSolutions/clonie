@@ -1,25 +1,48 @@
-Clonie is a powerfull program that clones drives both in good condition and bad.
+clonie v. 1.1
 
-only use this program if you know what you are doing, this has the power to wipe drives
-	if not used correctly.
+CHANGES
+-------
+1.0 -- first release
+1.1 -- added support for OSX
 
-there are three arguments that can be run in clonie.
-	-d dirty clone (see below)
-	-c clean clone (see below)
-	-z zerowrite (dd against /dev/zero to zerowrite drive)
+DEPENDENCIES
+------------
+*lsblk (this is not needed on OSX, diskutil list is used instead)
+*ddrescue
+*dd
+*pv
+*** If you are using OSX, please make sure you have command line tools installed
 
-if you need the dependencies (dd, ddrescue, pv, and lsblk) you can run the c program for your
-	package manager:
-		clonieDebDependencies.c for debian based/Aptitude
-		clonieFedoraDependencies.c for a RedHat/Yum based system.
+Without these programs, clonie will not function properly.
 
-There are two modes to this: clean and dirty
-	clean is based off of ddrescue and tries to work around bad sectors/disk errors
-	dirty is based on dd and is known to freeze up around bad sectors.
+INSTALLING CLONIE
+-----------------
+make
+sudo make install
 
-BS-Value: do some research before diving in, for most disks this value wont matter too much,
-	but it still deals with the block size, for regular acuracy and speed we found that 
-	512 is a good starting point, so it is good for a default value.
+INSTALLING CLONIE ON OSX
+------------------------
+make osx
+sudo make install
 
-If you choose the dirty clone, the clone will output a logfile by default names cloneLog.txt, this 
-	will output all locations of bad sectors, and manual recovery will need to be done.
+USING CLONIE
+------------
+Clonie is a very powerful tool when used properly. Clonie has the power to wipe drives. Please be careful when using clonie. It isn't our fault if you lose your data.
+
+Clonie can copy data from both good drives and bad drives.
+
+Clonie has 3 modes, dirty clone, clean clone, and zerowrite. Dirty and clean can be used either at the prompt when the program is executed, or with 
+-d
+-c
+respectively. Zerowrite can only be used by throwing the flag
+-z
+upon running clonie, as this will copy the contents of /dev/zero onto the target drive and create nearly-unrecoverable data loss.
+
+Dirty clone is based off of dd, and will work perfectly for known good drives. However, dd is known to freeze up around bad sectors and shouldn't be used on known bad drives.
+
+Clean clone is based off of ddrescure, and will work around bad sectors. Clonie will then create a logfile (named cloneLog.txt by default) which contains the locations of bad sectors which will need to have manual recovery performed.
+
+You may also specify a value for block sizes, (BS-Value), when prompted. Do some research before diving in, as for most drives you will not need to change this. Through testing we have found that 512 produces good accuracy and speed and has therefore been chosen as the default.
+
+THANK YOU FOR USING CLONIE
+--checksumSolutions

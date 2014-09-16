@@ -1,3 +1,18 @@
+/* Copyright 2014 Matthew Faltys, Jacob Ferry
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>. */
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -17,13 +32,13 @@ int dirtyClone(){
 
 	system("clear");
 	printf("Dirty clone: \n\n");
-	system("lsblk");
+	system("diskutil list");
 	printf("choose source drive: ");
 	scanf("%s", sdrive);
 	printf("\n\n");
 	clearBuf();
 	
-	snprintf(command, sizeof(command), "lsblk | grep -Ev '%s'", sdrive);
+	snprintf(command, sizeof(command), "diskutil list | grep -Ev '%s'", sdrive);
 	system(command);
 	printf("choose target drive: ");
 	scanf("%s", tdrive);
@@ -47,7 +62,7 @@ int dirtyClone(){
 		bsInt = 512;
 	}
 	
-	system("clear && lsblk");
+	system("clear && diskutil list");
 	printf("Clone %s onto %s? (Y/N):", sdrive, tdrive);
 	c = malloc (2);
 	fgets (c, 2, stdin);
@@ -77,19 +92,19 @@ int cleanClone(){
 
 	system("clear");
 	printf("Clean clone:\n\n");
-	system("lsblk");
+	system("diskutil list");
 	printf("choose source drive: ");
 	scanf("%s", sdrive);
 	printf("\n\n");
 	clearBuf();
 	
-	snprintf(command, sizeof(command), "lsblk | grep -Ev '%s'", sdrive);
+	snprintf(command, sizeof(command), "diskutil list | grep -Ev '%s'", sdrive);
 	system(command);
 	printf("choose target drive: ");
 	scanf("%s", tdrive);
 	clearBuf();
 
-	system("clear && lsblk");
+	system("clear && diskutil list");
 	printf("Clone %s onto %s? (Y/N):", sdrive, tdrive);
 	c = malloc (2);
 	fgets (c, 2, stdin);
@@ -118,12 +133,12 @@ void zero(){
 
 	system("clear");
 	printf("Zerowrite a drive (use extreme caution)\n");
-	system("lsblk");
+	system("diskutil list");
 	printf("choose a drive to zerowrite: ");
 	scanf("%s", tdrive);
 	clearBuf();
 	
-	system("clear && lsblk");
+	system("clear && diskutil list");
 	printf("are you sure you want to zerowrite /dev/%s? (Y/N):", tdrive);
 	c = malloc (2);
 	fgets (c, 2, stdin);
